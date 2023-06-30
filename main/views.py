@@ -19,21 +19,24 @@ class IndexViewSet(ListView):
 
 class OrderViewSet(View):
     def get(self, request, *args, **kwargs):
+        dishes = request.COOKIES.get('order')
+        dishes = {} if not dishes else json.loads(dishes)
         return render(
             request,
             'main/order.html',
             {
-                'dishes': Dish.objects.filter(id__in=json.loads(request.COOKIES.get('order'))),
+                'dishes': Dish.objects.filter(id__in=dishes.keys()),
                 'orders': Order.objects.filter(client=request.COOKIES.get('device'))
             }
         )
 
     def post(self, request, *args, **kwargs):
-        order = json.loads(request.COOKIES.get('order'))
+        dishes = request.COOKIES.get('order')
+        dishes = {} if not dishes else json.loads(dishes)
         client = request.COOKIES.get('device')
-        if client is not None:
+        if client:
             order = Order.objects.create(client=client)
-            for id, count in order.items():
+            for id, count in dishes.items():
                 OrderDish.objects.create(
                     dish=Dish.objects.get(id=id),
                     order=order,
