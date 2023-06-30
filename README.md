@@ -2,7 +2,7 @@
 ## Автор
 - [AlexeyPlz](https://github.com/AlexeyPlz)
 ## Проверка проекта
-- ToDo
+[![Flake8](https://github.com/AlexeyPlz/Test_Examus/actions/workflows/codestyle.yml/badge.svg)](https://github.com/AlexeyPlz/Test_Examus/actions/workflows/codestyle.yml)
 ## Стек
 - Python 3.10
 - Django 3.2.19

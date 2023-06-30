@@ -1,5 +1,7 @@
 from drf_extra_fields.fields import Base64ImageField
-from rest_framework.serializers import ModelSerializer, PrimaryKeyRelatedField, ValidationError
+from rest_framework.serializers import (ModelSerializer,
+                                        PrimaryKeyRelatedField,
+                                        ValidationError)
 
 from main.models import Allergen, Category, Dish
 

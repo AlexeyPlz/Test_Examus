@@ -1,7 +1,6 @@
 from django.contrib import admin
 
 from config.settings import EMPTY_ADMIN_VALUE
-
 from main.models import Allergen, Category, Dish, Order, OrderDish
 
 
