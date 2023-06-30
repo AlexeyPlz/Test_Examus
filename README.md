@@ -76,6 +76,12 @@ sudo docker-compose up --build -d      # Пересобрать контейне
 sudo docker-compose down               # Удаление контейнеров
 sudo docker-compose down  --volumes    # Удаление контейнеров с томами
 ```
+## Интерфейс
+<img src="./pic1.png" width="500" title="hover text" style="border:500px; padding:30px; border-radius: 10px">
+<img src="./pic2.png" width="500" title="hover text" style="border:500px; padding:30px; border-radius: 10px">
+<img src="./pic3.png" width="500" title="hover text" style="border:500px; padding:30px; border-radius: 10px">
+<img src="./pic4.png" width="500" title="hover text" style="border:500px; padding:30px; border-radius: 10px">
+
 ## Доступ после запуска
 - http://localhost/
 - http://localhost/admin/
