@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "==3.2.19"
+python-dotenv = "==1.0.0"
+pillow = "==9.5.0"
+djangorestframework = "==3.14.0"
+drf-extra-fields = "*"
+django-filter = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"

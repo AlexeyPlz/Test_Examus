@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/class_active.css' %}"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endcomment %}
+    {% comment %} <link rel="icon" type="image/x-icon" href="{% static 'img/logo_tab.png'%}"> {% endcomment %}
+    {% comment %} {% block style %}{% endblock %} {% endcomment %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    {% block title %}{% endblock %}
+  </head>
+  <body>
+    <header>{% include 'includes/header.html' %}</header>
+    <main>{% block content %}Нет информации!{% endblock %}</main>
+    <footer>{% include 'includes/footer.html' %}</footer>
+    {% comment %} <script src="{% static 'js/index.js' %}"></script> {% endcomment %}
+  </body>
+</html>
