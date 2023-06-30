@@ -91,3 +91,48 @@ main {
   font-size: 20px;
   font-weight: 400;
 }
+
+.main_p {
+  margin: 50px 0 10px 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.main_p.sum {
+  margin-left: 105px;
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+.main_button_order{
+  text-align: center;
+}
+
+.main_make_order {
+  width: 70%;
+  padding: 5px;
+  background-color: #000;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.main_make_order:hover {
+  background-color: #585757;
+}
+
+.main_all_orders {
+  margin: 0 105px;
+}
+
+.main_show_order {
+  margin: 10px 0;
+  background-color: #faf5f5;
+}
+
+.main_show_order p {
+  padding: 5px 20px;
+  font-size: 20px;
+  font-weight: 400;
+}

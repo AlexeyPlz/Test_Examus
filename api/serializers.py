@@ -41,6 +41,8 @@ class CreateDishSerializer(ModelSerializer):
     def validate(self, data):
         allergens_check = []
         allergens = self.initial_data.get('allergens')
+        if not allergens:
+            raise ValidationError({'allergens': 'Обязательное поле.'})
         for allergen in allergens:
             if allergen in allergens_check:
                 raise ValidationError({'allergens': 'Нельзя добавлять два одинаковых аллергена.'})

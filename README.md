@@ -5,6 +5,8 @@
 [![Flake8](https://github.com/AlexeyPlz/Test_Examus/actions/workflows/codestyle.yml/badge.svg)](https://github.com/AlexeyPlz/Test_Examus/actions/workflows/codestyle.yml)
 ## Стек
 - Python 3.10
+- JavaScript
+- Pipenv 2023.6.26
 - Django 3.2.19
 - DRF 3.14.0
 - DRF Extra-Fields 3.5.0
@@ -46,9 +48,11 @@
 После этого необходимо перейти в раздел заказы.  
 В данном разделе будет указан список всех прошлых заказов и то, что вы выбрали в меню на прошлой странице.  
 После нажатия на кнопку "Создать заказ" все выбранные блюда будут добавлены в новый заказ.
+
+Для доступа к API необходимо прописать токен в параметр "API-Token-Access" в Headers.
 ## Интерфейс
 - ToDo
-## Запуск локально
+## Запуск локально в контейнере
 Запустите контейнеры в фоновом режиме:
 ```bash
 sudo docker-compose up -d
@@ -75,13 +79,55 @@ sudo docker-compose down  --volumes    # Удаление контейнеров
 ## Доступ после запуска
 - http://localhost/
 - http://localhost/admin/
-- http://localhost/api/v1/
 ## Роутеры API
 В проекте доступен один роутер:
 - http://localhost/api/v1/dishes/ [GET, POST]
 
 Схема POST запроса:
-- ToDo
+```python
+{
+    "title": str,
+    "price": int,
+    "calories": int,
+    "image": base64,
+    "category": int,
+    "allergens": list[int]
+}
+```
+Параметры GET запроса:
+- limit - количество блюд на страницу
+- page - номер страницы
 
 Схема GET запроса:
-- ToDo
+```python
+{
+    "count": int,
+    "next": str | None,
+    "previous": str | None,
+    "results": [
+        {
+            "id": int,
+            "title": str,
+            "price": int,
+            "calories": int,
+            "image": str,
+            "category": {
+                "id": int,
+                "created": datetime,
+                "updated": datetime,
+                "title": str
+            },
+            "allergens": [
+                {
+                    "id": int,
+                    "created": datetime,
+                    "updated": datetime,
+                    "title": str
+                }
+            ],
+            "created": datetime,
+            "updated": datetime
+        }
+    ]
+}
+```
