@@ -25,7 +25,7 @@ class ReadDishSerializer(ModelSerializer):
 
     class Meta:
         model = Dish
-        fields = ('__all__')
+        fields = '__all__'
         read_only_fields = ('id', 'title', 'price', 'calories')
 
 
@@ -36,7 +36,7 @@ class CreateDishSerializer(ModelSerializer):
 
     class Meta:
         model = Dish
-        fields = ('__all__')
+        fields = '__all__'
 
     def validate(self, data):
         allergens_check = []
